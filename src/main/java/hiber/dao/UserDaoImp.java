@@ -34,7 +34,8 @@ public class UserDaoImp implements UserDao {
               .createQuery("from User where car.model = :firstParam and car.series = :secondParam");
       query.setParameter("firstParam", car.getModel());
       query.setParameter("secondParam", car.getSeries());
-      User user = query.getResultList().get(0);
+//      User user = query.getResultList().get(0);
+      User user = query.getSingleResult();
       return user;
    }
 
